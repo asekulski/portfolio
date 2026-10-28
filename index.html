@@ -100,7 +100,6 @@ header h1 span { color: var(--accent); }
 
 figure { margin: 0; border: 1px solid var(--rule); background: var(--paper); display: grid; }
 figure svg { display: block; width: 100%; height: auto; }
-figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--ink-soft); padding: 8px 12px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 svg .ln { stroke: var(--ink); fill: none; }
 svg .thin { stroke: var(--ink-soft); fill: none; stroke-width: 1; }
 svg .acc { stroke: var(--accent); fill: none; }
@@ -110,10 +109,6 @@ svg text { fill: var(--ink); font-family: var(--mono); font-size: 15px; }
 svg text.soft { fill: var(--ink-soft); font-size: 13px; }
 svg text.a { fill: var(--accent); }
 .render img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
-.photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
-.photos a { display: block; border: 1px solid var(--rule); background: var(--paper); }
-.photos img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.photos a:hover { border-color: var(--accent); }
 
 footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; }
 
@@ -140,7 +135,7 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 01 / 04 · Mechanical CAD</span>
       <h2>Six-bike wall rack</h2>
-      <figure class="render"><img src="images/cad.jpg" alt="Steel tube wall rack holding six bikes in a bike shop back room" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
+      <figure class="render"><img src="images/cad.jpg" alt="Steel tube wall rack holding six bikes in a bike shop back room" width="1200" height="800" loading="lazy"></figure>
       <p class="story">A local bike shop needed a wall rack that could hold six bikes without eating up their whole back room, so I designed one in FreeCAD. Nothing fancy. Just bent steel tube and a couple of flat brackets. I made the cut and bend drawings in AutoCAD Mechanical for the welder down the street. The first version had the hooks too close together and the handlebars kept bumping into each other, which was annoying to find out after it was already built, so I moved them out 4 inches on the second try and it’s been on the wall for over a year now.</p>
       <span class="status">On the wall for over a year</span>
       <figure>
@@ -163,9 +158,8 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
           <text class="soft" x="40" y="252">WALL PLATE + 2 FLAT BRACKETS · 6 BENT-TUBE HOOKS</text>
           <text class="soft" x="560" y="20" text-anchor="end">FRONT ELEVATION · NTS</text>
         </svg>
-        <figcaption><span>Illustration · hook moved out 4 in for Rev B</span><span>Not to scale</span></figcaption>
+        
       </figure>
-      <div class="photos" data-photos="cad" hidden></div>
     </div>
     <aside class="sheet-side">
       <div class="tb"><span class="label">Client</span><span class="v">Local bike shop</span></div>
@@ -177,7 +171,7 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 02 / 04 · Architecture &amp; BIM</span>
       <h2>Backyard studio</h2>
-      <figure class="render"><img src="images/bim.jpg" alt="One-room timber backyard studio with a small deck" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
+      <figure class="render"><img src="images/bim.jpg" alt="One-room timber backyard studio with a small deck" width="1200" height="800" loading="lazy"></figure>
       <p class="story">I did the model for a small backyard studio for a homeowner while I was freelancing. It was basically one room and a little deck. I drew it up in Vectorworks, and the client kept changing the window sizes, which got old fast, but the model handled it fine. Once things settled I exported an IFC and opened it in Blender with Bonsai to double check the roof framing before it went to the builder. I did all of it myself, from the first sketch to the drawings the builder actually used.</p>
       <figure>
         <svg viewBox="0 0 600 300" role="img" aria-label="Floor plan of a one-room studio with an attached deck, showing two windows and roof framing">
@@ -199,9 +193,8 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
           <text class="soft" x="60" y="272">- - - roof framing, checked in Blender + Bonsai via IFC</text>
           <text class="soft" x="540" y="28" text-anchor="end">PLAN · NTS</text>
         </svg>
-        <figcaption><span>Illustration · window sizes revised several times by the client</span><span>Not to scale</span></figcaption>
+        
       </figure>
-      <div class="photos" data-photos="bim" hidden></div>
     </div>
     <aside class="sheet-side">
       <div class="tb"><span class="label">Client</span><span class="v">Private homeowner</span></div>
@@ -213,7 +206,7 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 03 / 04 · Electronics design</span>
       <h2>Fridge door alarm</h2>
-      <figure class="render"><img src="images/electronics.jpg" alt="Small alarm circuit board in a clear case on a walk-in fridge door" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
+      <figure class="render"><img src="images/electronics.jpg" alt="Small alarm circuit board in a clear case on a walk-in fridge door" width="1200" height="800" loading="lazy"></figure>
       <p class="story">A local bakery paid me to build a little beeper that goes off when the walk-in fridge door gets left open too long. I simulated the timer and buzzer driver in LTspice first so the delay landed somewhere around two minutes. The layout was in KiCad, just a two layer board about the size of a matchbox, and I sent it off to JLCPCB. My first batch had the reed switch footprint flipped, which was a dumb mistake and cost me a week. Second round worked, and it’s been stuck to that fridge door for months now.</p>
       <span class="status">On the fridge door for months</span>
       <figure>
@@ -239,9 +232,8 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
           <text class="a" x="270" y="282" text-anchor="middle">≈ 2 min open → alarm</text>
           <text class="soft" x="580" y="20" text-anchor="end">BLOCK DIAGRAM · SIM IN LTSPICE</text>
         </svg>
-        <figcaption><span>Illustration · 2-layer board about the size of a matchbox</span><span>Not the original schematic</span></figcaption>
+        
       </figure>
-      <div class="photos" data-photos="electronics" hidden></div>
     </div>
     <aside class="sheet-side">
       <div class="tb"><span class="label">Client</span><span class="v">Local bakery</span></div>
@@ -253,7 +245,7 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 04 / 04 · Game development</span>
       <h2>Escape room lobby game</h2>
-      <figure class="render"><img src="images/games.jpg" alt="Tablet on a lobby counter running a tile puzzle game" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
+      <figure class="render"><img src="images/games.jpg" alt="Tablet on a lobby counter running a tile puzzle game" width="1200" height="800" loading="lazy"></figure>
       <p class="story">A local escape room business hired me to make a short puzzle game for the tablet in their lobby, something people could mess with while they waited. I built it in Godot and wrote pretty much everything myself, from the tap controls to the little hint system. The tablet was old and cheap, so I spent way more time than I expected shrinking textures just to stop it from stuttering. It’s maybe ten minutes of gameplay. They still have it running, and the owner says kids fight over it.</p>
       <span class="status">Still running in the lobby</span>
       <figure>
@@ -277,9 +269,8 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
           <text class="soft" x="360" y="128">~10 min</text>
           <text class="soft" x="300" y="294" text-anchor="middle">GODOT · TOUCH · TEXTURES SHRUNK FOR AN OLD TABLET</text>
         </svg>
-        <figcaption><span>Illustration · tap controls and hint system</span><span>Not a screenshot</span></figcaption>
+        
       </figure>
-      <div class="photos" data-photos="games" hidden></div>
     </div>
     <aside class="sheet-side">
       <div class="tb"><span class="label">Client</span><span class="v">Local escape room</span></div>
@@ -289,25 +280,5 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
 
   <footer>Project Sheets · 4 projects</footer>
 </div>
-<script>
-// Real photos and screenshots: put files in images/ and list them here, e.g. cad: ["images/rack-1.jpg"]
-var PHOTOS = {
-  cad: [],
-  bim: [],
-  electronics: [],
-  games: []
-};
-document.querySelectorAll("[data-photos]").forEach(function (el) {
-  var list = PHOTOS[el.getAttribute("data-photos")] || [];
-  list.forEach(function (src) {
-    var a = document.createElement("a");
-    a.href = src; a.target = "_blank"; a.rel = "noopener";
-    var img = document.createElement("img");
-    img.src = src; img.loading = "lazy"; img.alt = "Project photo";
-    a.appendChild(img); el.appendChild(a);
-  });
-  el.hidden = list.length === 0;
-});
-</script>
 </body>
 </html>
