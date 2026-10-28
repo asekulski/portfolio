@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project Sheets Portfolio</title>
+<meta name="description" content="Four freelance design and engineering projects for local businesses: a bike rack, a backyard studio, a fridge door alarm and a lobby puzzle game.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: each project is a drawing sheet: story on the left, a title block on the right. */
+:root {
+  --paper: #eef1f3;
+  --sheet: #fbfcfc;
+  --ink: #17232e;
+  --ink-soft: #4b5a67;
+  --rule: #c5ced5;
+  --grid: rgba(23, 35, 46, 0.05);
+  --accent: #d9541e;
+  --accent-soft: rgba(217, 84, 30, 0.12);
+  --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f161c; --sheet: #151f27; --ink: #e3e9ee; --ink-soft: #9aa9b5;
+    --rule: #2c3a46; --grid: rgba(227, 233, 238, 0.04);
+    --accent: #f07a45; --accent-soft: rgba(240, 122, 69, 0.16);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f161c; --sheet: #151f27; --ink: #e3e9ee; --ink-soft: #9aa9b5;
+  --rule: #2c3a46; --grid: rgba(227, 233, 238, 0.04);
+  --accent: #f07a45; --accent-soft: rgba(240, 122, 69, 0.16);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font: 16px/1.65 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1000px; margin: 0 auto; padding-block: 56px 80px; display: grid; gap: 36px; }
+
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+.label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+header { display: grid; gap: 18px; }
+header h1 {
+  font-size: clamp(40px, 8vw, 80px); line-height: 0.95;
+  font-weight: 800; font-stretch: 68%; text-transform: uppercase;
+}
+header h1 span { color: var(--accent); }
+.index { display: flex; flex-wrap: wrap; gap: 8px; }
+.index a {
+  font-family: var(--mono); font-size: 13px; text-decoration: none;
+  border: 1px solid var(--rule); background: var(--sheet); padding: 6px 12px; border-radius: 2px;
+}
+.index a:hover { border-color: var(--accent); }
+.index b { color: var(--accent); font-weight: 500; }
+
+.sheet {
+  background: var(--sheet); border: 1.5px solid var(--ink);
+  display: grid; grid-template-columns: minmax(0, 1fr) 260px;
+  scroll-margin-top: 24px;
+}
+.sheet-main { padding: 32px; display: grid; gap: 18px; align-content: start; min-width: 0; border-right: 1px solid var(--ink); }
+.sheet-side { display: grid; grid-auto-rows: min-content; min-width: 0; }
+.no { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+.sheet h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 750; font-stretch: 75%; text-transform: uppercase; line-height: 1; }
+.story { max-width: 64ch; margin: 0; font-size: 17px; }
+.status {
+  justify-self: start; font-family: var(--mono); font-size: 12px;
+  background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 2px;
+}
+
+.tb { border-bottom: 1px solid var(--ink); padding: 12px 16px; display: grid; gap: 6px; }
+.tb:last-child { border-bottom: 0; }
+.tb .v { font-size: 15px; font-weight: 500; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { font-family: var(--mono); font-size: 12px; border: 1px solid var(--rule); padding: 2px 8px; border-radius: 2px; }
+
+footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; }
+
+@media (max-width: 760px) {
+  .sheet { grid-template-columns: 1fr; }
+  .sheet-main { border-right: 0; border-bottom: 1px solid var(--ink); padding: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="label">Portfolio · Freelance projects</span>
+    <h1>Things I designed<br>that are <span>still in use</span></h1>
+    <nav class="index" aria-label="Projects">
+      <a href="#cad"><b>01</b> Mechanical CAD</a>
+      <a href="#bim"><b>02</b> Architecture &amp; BIM</a>
+      <a href="#electronics"><b>03</b> Electronics</a>
+      <a href="#games"><b>04</b> Game dev</a>
+    </nav>
+  </header>
+
+  <article class="sheet" id="cad">
+    <div class="sheet-main">
+      <span class="no">SHEET 01 / 04 · Mechanical CAD</span>
+      <h2>Six-bike wall rack</h2>
+      <p class="story">A local bike shop needed a wall rack that could hold six bikes without eating up their whole back room, so I designed one in FreeCAD. Nothing fancy. Just bent steel tube and a couple of flat brackets. I made the cut and bend drawings in AutoCAD Mechanical for the welder down the street. The first version had the hooks too close together and the handlebars kept bumping into each other, which was annoying to find out after it was already built, so I moved them out 4 inches on the second try and it’s been on the wall for over a year now.</p>
+      <span class="status">On the wall for over a year</span>
+    </div>
+    <aside class="sheet-side">
+      <div class="tb"><span class="label">Client</span><span class="v">Local bike shop</span></div>
+      <div class="tb"><span class="label">Tools</span><div class="chips"><span>FreeCAD</span><span>AutoCAD Mechanical</span></div></div>
+    </aside>
+  </article>
+
+  <article class="sheet" id="bim">
+    <div class="sheet-main">
+      <span class="no">SHEET 02 / 04 · Architecture &amp; BIM</span>
+      <h2>Backyard studio</h2>
+      <p class="story">I did the model for a small backyard studio for a homeowner while I was freelancing. It was basically one room and a little deck. I drew it up in Vectorworks, and the client kept changing the window sizes, which got old fast, but the model handled it fine. Once things settled I exported an IFC and opened it in Blender with Bonsai to double check the roof framing before it went to the builder. I did all of it myself, from the first sketch to the drawings the builder actually used.</p>
+      <span class="status">Built from my drawings</span>
+    </div>
+    <aside class="sheet-side">
+      <div class="tb"><span class="label">Client</span><span class="v">Private homeowner</span></div>
+      <div class="tb"><span class="label">Tools</span><div class="chips"><span>Vectorworks</span><span>Blender + Bonsai</span><span>IFC</span></div></div>
+    </aside>
+  </article>
+
+  <article class="sheet" id="electronics">
+    <div class="sheet-main">
+      <span class="no">SHEET 03 / 04 · Electronics design</span>
+      <h2>Fridge door alarm</h2>
+      <p class="story">A local bakery paid me to build a little beeper that goes off when the walk-in fridge door gets left open too long. I simulated the timer and buzzer driver in LTspice first so the delay landed somewhere around two minutes. The layout was in KiCad, just a two layer board about the size of a matchbox, and I sent it off to JLCPCB. My first batch had the reed switch footprint flipped, which was a dumb mistake and cost me a week. Second round worked, and it’s been stuck to that fridge door for months now.</p>
+      <span class="status">On the fridge door for months</span>
+    </div>
+    <aside class="sheet-side">
+      <div class="tb"><span class="label">Client</span><span class="v">Local bakery</span></div>
+      <div class="tb"><span class="label">Tools</span><div class="chips"><span>LTspice</span><span>KiCad</span><span>JLCPCB</span></div></div>
+    </aside>
+  </article>
+
+  <article class="sheet" id="games">
+    <div class="sheet-main">
+      <span class="no">SHEET 04 / 04 · Game development</span>
+      <h2>Escape room lobby game</h2>
+      <p class="story">A local escape room business hired me to make a short puzzle game for the tablet in their lobby, something people could mess with while they waited. I built it in Godot and wrote pretty much everything myself, from the tap controls to the little hint system. The tablet was old and cheap, so I spent way more time than I expected shrinking textures just to stop it from stuttering. It’s maybe ten minutes of gameplay. They still have it running, and the owner says kids fight over it.</p>
+      <span class="status">Still running in the lobby</span>
+    </div>
+    <aside class="sheet-side">
+      <div class="tb"><span class="label">Client</span><span class="v">Local escape room</span></div>
+      <div class="tb"><span class="label">Tools</span><div class="chips"><span>Godot</span></div></div>
+    </aside>
+  </article>
+
+  <footer>Project Sheets · 4 projects</footer>
+</div>
+</body>
+</html>
