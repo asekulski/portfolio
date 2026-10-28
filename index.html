@@ -109,6 +109,7 @@ svg .fillacc { fill: var(--accent-soft); stroke: var(--accent); }
 svg text { fill: var(--ink); font-family: var(--mono); font-size: 15px; }
 svg text.soft { fill: var(--ink-soft); font-size: 13px; }
 svg text.a { fill: var(--accent); }
+.render img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
 .photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
 .photos a { display: block; border: 1px solid var(--rule); background: var(--paper); }
 .photos img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
@@ -139,6 +140,7 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 01 / 04 · Mechanical CAD</span>
       <h2>Six-bike wall rack</h2>
+      <figure class="render"><img src="images/cad.jpg" alt="Steel tube wall rack holding six bikes in a bike shop back room" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
       <p class="story">A local bike shop needed a wall rack that could hold six bikes without eating up their whole back room, so I designed one in FreeCAD. Nothing fancy. Just bent steel tube and a couple of flat brackets. I made the cut and bend drawings in AutoCAD Mechanical for the welder down the street. The first version had the hooks too close together and the handlebars kept bumping into each other, which was annoying to find out after it was already built, so I moved them out 4 inches on the second try and it’s been on the wall for over a year now.</p>
       <span class="status">On the wall for over a year</span>
       <figure>
@@ -175,8 +177,8 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 02 / 04 · Architecture &amp; BIM</span>
       <h2>Backyard studio</h2>
+      <figure class="render"><img src="images/bim.jpg" alt="One-room timber backyard studio with a small deck" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
       <p class="story">I did the model for a small backyard studio for a homeowner while I was freelancing. It was basically one room and a little deck. I drew it up in Vectorworks, and the client kept changing the window sizes, which got old fast, but the model handled it fine. Once things settled I exported an IFC and opened it in Blender with Bonsai to double check the roof framing before it went to the builder. I did all of it myself, from the first sketch to the drawings the builder actually used.</p>
-      <span class="status">Built from my drawings</span>
       <figure>
         <svg viewBox="0 0 600 300" role="img" aria-label="Floor plan of a one-room studio with an attached deck, showing two windows and roof framing">
           <g class="thin" stroke-dasharray="4 5">
@@ -211,6 +213,7 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 03 / 04 · Electronics design</span>
       <h2>Fridge door alarm</h2>
+      <figure class="render"><img src="images/electronics.jpg" alt="Small alarm circuit board in a clear case on a walk-in fridge door" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
       <p class="story">A local bakery paid me to build a little beeper that goes off when the walk-in fridge door gets left open too long. I simulated the timer and buzzer driver in LTspice first so the delay landed somewhere around two minutes. The layout was in KiCad, just a two layer board about the size of a matchbox, and I sent it off to JLCPCB. My first batch had the reed switch footprint flipped, which was a dumb mistake and cost me a week. Second round worked, and it’s been stuck to that fridge door for months now.</p>
       <span class="status">On the fridge door for months</span>
       <figure>
@@ -250,6 +253,7 @@ footer { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); bord
     <div class="sheet-main">
       <span class="no">SHEET 04 / 04 · Game development</span>
       <h2>Escape room lobby game</h2>
+      <figure class="render"><img src="images/games.jpg" alt="Tablet on a lobby counter running a tile puzzle game" width="1200" height="800" loading="lazy"><figcaption><span>AI-generated visualization of the project</span></figcaption></figure>
       <p class="story">A local escape room business hired me to make a short puzzle game for the tablet in their lobby, something people could mess with while they waited. I built it in Godot and wrote pretty much everything myself, from the tap controls to the little hint system. The tablet was old and cheap, so I spent way more time than I expected shrinking textures just to stop it from stuttering. It’s maybe ten minutes of gameplay. They still have it running, and the owner says kids fight over it.</p>
       <span class="status">Still running in the lobby</span>
       <figure>
